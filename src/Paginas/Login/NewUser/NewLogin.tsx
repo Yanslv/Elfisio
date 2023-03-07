@@ -2,11 +2,15 @@ import React ,{ useState, useEffect }from 'react';
 import {Text, TextInput, Button, View, TouchableOpacity} from 'react-native';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import  auth from '../../../config/firebase';
+import { useNavigation } from '@react-navigation/native';
+
 
 export const NewLogin = () => {
   const [email, setName] = useState("");
   const [pass, setPass] = useState("");
   const [errorLogin, seteErrorLogin] = useState(0);
+
+  const navigation = useNavigation()
 
   const loginFirebase = () => {
     createUserWithEmailAndPassword(auth, email, pass)
@@ -93,6 +97,26 @@ export const NewLogin = () => {
           }}>
             <Text style={{ fontWeight:"bold", fontSize:24, color:"#fff"}}>
                ADD
+            </Text>
+          </TouchableOpacity >
+          <TouchableOpacity
+          style={{ 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            borderRadius:4, 
+            marginTop: 20,
+            padding:10, 
+            borderBottomColor:'#7693fa',
+            borderBottomWidth:4,
+            borderTopColor:'#708efc',
+            borderTopWidth:4
+          }}
+          onPress={() => {
+            navigation.navigate("Perfil");
+          }}
+          >
+            <Text style={{ fontWeight:"bold", fontSize:24, color:"#fff"}}>
+              Perfil
             </Text>
           </TouchableOpacity>
         </View>
