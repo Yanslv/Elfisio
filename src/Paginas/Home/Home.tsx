@@ -1,16 +1,14 @@
 
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import React ,{ useState,useEffect } from 'react';
+import React ,{ useState, useEffect } from 'react';
 import { Text, TouchableOpacity, View } from "react-native";
 import { TextInput } from "react-native/Libraries/Components/TextInput/TextInput";
-// import auth from '../../config/firebase';
 
 
 export const Home = () => {
     const [email, setName] = useState("");
     const [pass, setPass] = useState("");
 
-    const [errorLogin, seteErrorLogin] = useState(0);
+    const [errorLogin, setErrorLogin] = useState(0);
 
     // const loginFirebase = () => {
     //   signInWithEmailAndPassword(auth, email, pass)
@@ -28,14 +26,14 @@ export const Home = () => {
     useEffect(() => {
       return () => {
         setTimeout(() => {
-          seteErrorLogin(0)
+          setErrorLogin(0)
         },5000)
       };
     }, [errorLogin])
 
 
     function validaErro(){
-      return seteErrorLogin(1)
+      return setErrorLogin(1)
   }
 
     return (
