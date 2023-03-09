@@ -25,10 +25,10 @@ export const Container = styled.View`
   height: auto;
 `;
 
-export const TextCustom = styled.Text`
-    color: #696969;
-    font-size: 24px;
-    font-weight: 500;
+export const TextBold = styled.Text`
+    color: #FFFF;
+    font-size: 32px;
+    font-weight: 600;
 `;
 
 
